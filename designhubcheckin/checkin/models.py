@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Visitors(models.Model):
@@ -7,7 +8,8 @@ class Visitors(models.Model):
     company = models.CharField(max_length=200)
     identification_number = models.CharField(max_length=200, blank=True)
     telephone_number = models.IntegerField()
-    date = models.DateField('date recorded')
+    date = models.DateField( default=timezone.now)
+      
 
     def __str__(self):
         return self.name
