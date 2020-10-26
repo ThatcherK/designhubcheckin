@@ -1,0 +1,31 @@
+<form action="{% url 'search' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Search">
+</form>
+<form action="{% url 'addvisitor' %}" method="post">
+    {% csrf_token %}
+    {{addform}}
+    <input type="submit" value="Add visitor">
+</form>
+{% if visitors_list %}
+<table style="border: 1px solid black;">
+    <tr style="border: 1px solid black;">
+        <th style="border: 1px solid black;">Date</th>
+        <th style="border: 1px solid black;">Full Name</th>
+        <th style="border: 1px solid black;">Company Name</th>
+        <th style="border: 1px solid black;">Telephone Number</th>
+        <th style="border: 1px solid black;">Temperature</th>
+    </tr>
+    {% for visitor in visitors_list %}
+
+    <tr>
+        <td style="border: 1px solid black;">{{visitor.date}}</td>
+        <td style="border: 1px solid black;">{{visitor.name}}</td>
+        <td style="border: 1px solid black;">{{visitor.company}}</td>
+        <td style="border: 1px solid black;">{{visitor.telephone_number}}</td>
+        <td style="border: 1px solid black;">{{visitor.temperature}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}

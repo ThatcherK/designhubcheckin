@@ -1,0 +1,8 @@
+{% if visitor %}
+<form action="{% url 'edit' visitor.id %}" method="post">
+    <h3>Check in {{visitor.name}} today!</h3>
+    {% csrf_token %}
+    {{editform}}
+    <input type="submit" value="Edit">
+</form>
+{% endif %}
