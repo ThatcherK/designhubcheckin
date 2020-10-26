@@ -6,9 +6,7 @@ from .forms import LoginForm, SearchForm, AddForm, EditVisitorForm
 from .models import Visitors
 # Create your views here.
 
-visitors_list = Visitors.objects.all()
-search_form = SearchForm()
-add_form = AddForm()
+
 
 def index(request):
     form = LoginForm()
@@ -18,6 +16,9 @@ def index(request):
     return render(request,'checkin/index.html',context)
 
 def login(request):
+    visitors_list = Visitors.objects.all()
+    search_form = SearchForm()
+    add_form = AddForm()
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -30,7 +31,6 @@ def login(request):
                 visitors_list = Visitors.objects.all()
                 return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
             else:
-                # flash('Invalid username or password')
                 pass
 
         else:
@@ -52,22 +52,27 @@ def search(request):
                 return render(request, 'checkin/visitors.html',{'visitor':visitor, 'editform': editing_form})
 
 def add_new_visitor(request):
+    visitors_list = Visitors.objects.all()
+    search_form = SearchForm()
+    add_form = AddForm()
     if request.method == 'POST':
         form = AddForm(request.POST)
+        print(form)
         if form.is_valid():
             name = form.cleaned_data.get('name')
             company = form.cleaned_data.get('company')
             temperature = form.cleaned_data.get('temperature')
             identification_number = form.cleaned_data.get('identification_number')
             telephone_number = form.cleaned_data.get('telephone_number')
-            date = form.cleaned_data.get('date')
-            visitor = Visitors(name=name, company=company,temperature=temperature, identification_number=identification_number,telephone_number=telephone_number, date=date)
+            # date = form.cleaned_data.get('date')
+            visitor = Visitors(name=name, company=company,temperature=temperature, identification_number=identification_number,telephone_number=telephone_number)
             visitor.save()
             return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
 
         else:
+            print(form.errors)
+            
             return HttpResponse("error")
-            # return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
 
 def check_in_returning_visitor(request, visitor_id):
     if request.method == 'POST':

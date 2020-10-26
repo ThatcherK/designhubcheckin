@@ -13,7 +13,6 @@ class AddForm(forms.Form):
     temperature = forms.IntegerField(max_value=50)
     identification_number = forms.CharField(label='ID number', max_length=100)
     telephone_number = forms.CharField(label='Phone number', max_length=100)
-    date = forms.DateField(label='Date', widget=forms.DateInput)
 
 class EditVisitorForm(forms.Form):
     date = forms.DateField(label='Date', widget=forms.DateInput)
