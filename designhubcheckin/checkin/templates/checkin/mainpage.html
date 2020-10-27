@@ -17,14 +17,14 @@
         <th style="border: 1px solid black;">Telephone Number</th>
         <th style="border: 1px solid black;">Temperature</th>
     </tr>
-    {% for visitor in visitors_list %}
+    {% for registered_visitor in visitors_list %}
 
     <tr>
-        <td style="border: 1px solid black;">{{visitor.date}}</td>
-        <td style="border: 1px solid black;">{{visitor.name}}</td>
-        <td style="border: 1px solid black;">{{visitor.company}}</td>
-        <td style="border: 1px solid black;">{{visitor.telephone_number}}</td>
-        <td style="border: 1px solid black;">{{visitor.temperature}}</td>
+        <td style="border: 1px solid black;">{{registered_visitor.date}}</td>
+        <td style="border: 1px solid black;">{{registered_visitor.visitor.name}}</td>
+        <td style="border: 1px solid black;">{{registered_visitor.visitor.company}}</td>
+        <td style="border: 1px solid black;">{{registered_visitor.visitor.telephone_number}}</td>
+        <td style="border: 1px solid black;">{{registered_visitor.temperature}}</td>
     </tr>
     {% endfor %}
 </table>

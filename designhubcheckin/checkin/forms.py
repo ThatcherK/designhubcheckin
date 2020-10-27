@@ -15,5 +15,4 @@ class AddForm(forms.Form):
     telephone_number = forms.CharField(label='Phone number', max_length=100)
 
 class EditVisitorForm(forms.Form):
-    date = forms.DateField(label='Date', widget=forms.DateInput)
     temperature = forms.IntegerField( label="Temperature",max_value=50)
