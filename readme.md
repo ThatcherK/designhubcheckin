@@ -9,9 +9,6 @@ A simple web application for checking in visitors
 
 ## Setup 
 
-
-## Installation
-
 ### Clone the project
 
 `git clone https://github.com/ThatcherK/designhubcheckin.git`
