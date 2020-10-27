@@ -3,7 +3,7 @@ A simple web application for checking in visitors
 
 ## Technologies
 
-1. Python 3.7
+1. Python 3.8.5
 2. Django 3.1.2
 
 
@@ -11,6 +11,10 @@ A simple web application for checking in visitors
 
 
 ## Installation
+
+### Clone the project
+
+`git clone https://github.com/ThatcherK/designhubcheckin.git`
 
 ### Create a virtual environment 
 
