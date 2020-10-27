@@ -1,6 +1,12 @@
-<form action="{% url 'login' %}" method="post">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'checkin/style.css' %}">
+<form action="{% url 'login' %}" method="post" class="loginform">
     {% csrf_token %}
     <h1>Design Hub Check In System</h1>
-    {{form}}
-    <input type="submit" value="Submit"> 
+    <div class="loginInputs">
+        {{form}}
+        <input id="loginButton" type="submit" value="Log in"> 
+    </div>
+    
+    
 </form>

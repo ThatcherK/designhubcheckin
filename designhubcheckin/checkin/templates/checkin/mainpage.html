@@ -1,31 +1,38 @@
-<form action="{% url 'search' %}" method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Search">
-</form>
-<form action="{% url 'addvisitor' %}" method="post">
-    {% csrf_token %}
-    {{addform}}
-    <input type="submit" value="Add visitor">
-</form>
-{% if visitors_list %}
-<table style="border: 1px solid black;">
-    <tr style="border: 1px solid black;">
-        <th style="border: 1px solid black;">Date</th>
-        <th style="border: 1px solid black;">Full Name</th>
-        <th style="border: 1px solid black;">Company Name</th>
-        <th style="border: 1px solid black;">Telephone Number</th>
-        <th style="border: 1px solid black;">Temperature</th>
-    </tr>
-    {% for registered_visitor in visitors_list %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'checkin/style.css' %}">
+<div class="mainpageContainer">
+    <h1>The Design Hub Checkin System</h1>
+    <form action="{% url 'search' %}" method="post" class="searchform">
+        {% csrf_token %}
+        {{form}}
+        <input id="searchButton" type="submit" value="Search">
+    </form>
+    <h2>First time visitor</h2>
+    <form action="{% url 'addvisitor' %}" method="post" class="addVisitorForm">
+        {% csrf_token %}
+        {{addform}}
+        <input type="submit" value="Register first time visitor" id="addVisitorButton">
+    </form>
+    {% if visitors_list %}
+    <h2>Design Hub Visitors Register</h2>
+    <table id="visitorsTable">
+        <tr >
+            <th>Date</th>
+            <th>Full Name</th>
+            <th>Company Name</th>
+            <th>Telephone Number</th>
+            <th>Temperature</th>
+        </tr>
+        {% for registered_visitor in visitors_list %}
 
-    <tr>
-        <td style="border: 1px solid black;">{{registered_visitor.date}}</td>
-        <td style="border: 1px solid black;">{{registered_visitor.visitor.name}}</td>
-        <td style="border: 1px solid black;">{{registered_visitor.visitor.company}}</td>
-        <td style="border: 1px solid black;">{{registered_visitor.visitor.telephone_number}}</td>
-        <td style="border: 1px solid black;">{{registered_visitor.temperature}}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endif %}
+        <tr>
+            <td>{{registered_visitor.date}}</td>
+            <td>{{registered_visitor.visitor.name}}</td>
+            <td>{{registered_visitor.visitor.company}}</td>
+            <td>{{registered_visitor.visitor.telephone_number}}</td>
+            <td>{{registered_visitor.temperature}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>

@@ -1,8 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'checkin/style.css' %}">
 {% if visitor %}
-<form action="{% url 'edit' visitor.id %}" method="post">
-    <h3>Check in {{visitor.name}} today!</h3>
+<form action="{% url 'edit' visitor.id %}" method="post" class="recordTemperatureForm">
+    <h2>Record {{visitor.name}}'s temperature today!</h2>
     {% csrf_token %}
     {{editform}}
-    <input type="submit" value="Edit">
+    <input type="submit" value="Record" id="recordTempButton">
 </form>
 {% endif %}

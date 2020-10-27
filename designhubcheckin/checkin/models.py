@@ -6,7 +6,7 @@ class Visitors(models.Model):
     name = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     identification_number = models.CharField(max_length=200, blank=True)
-    telephone_number = models.IntegerField()
+    telephone_number = models.CharField(max_length=100)
     date = models.DateTimeField( default=timezone.now)
       
 

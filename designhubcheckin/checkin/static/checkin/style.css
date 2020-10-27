@@ -1,0 +1,114 @@
+.loginform{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+.loginform input{
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    
+}
+#loginButton{
+    background-color: rgba(141, 141, 5, 0.877);
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    font-size: 19px;
+    color: white;
+}
+#loginButton:hover{
+    background-color: rgb(194, 194, 63);
+}
+.loginInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginform h1{
+    color: teal;
+}
+.loginform label{
+    color: rgb(77, 2, 2);
+}
+.mainpageContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.mainpageContainer h1{
+    color: rgb(65, 64, 64);
+}
+.mainpageContainer h2{
+    color: rgb(97, 96, 96);
+}
+#searchButton, #recordTempButton{
+    background-color: teal;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    color: white;
+    width: 80px;
+    /* font-size: 19px; */
+}
+#searchButton:hover, #recordTempButton:hover{
+    background-color: rgb(2, 56, 56);
+}
+.searchform input{
+    height: 40px;
+    width: 400px;
+}
+.addVisitorForm{
+    display: flex;
+    flex-direction: column;
+}
+.addVisitorForm input{
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#addVisitorButton{
+    background-color: teal;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: medium;
+}
+#addVisitorButton:hover{
+    background-color: rgb(2, 56, 56);
+}
+#visitorsTable{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#visitorsTable td, #visitorsTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+#visitorsTable tr:nth-child(even){background-color: #f2f2f2;}
+#visitorsTable tr:hover {background-color: #ddd;}
+#visitorsTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: teal;
+    color: white;
+  }
+.recordTemperatureForm{
+    text-align: center;
+    padding: 20px;
+}
+.recordTemperatureForm input{
+    width: 400px;
+    height: 40px;
+
+}
+.recordTemperatureForm h2{
+    color: rgb(83, 82, 82);
+}
