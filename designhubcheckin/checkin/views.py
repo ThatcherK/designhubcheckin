@@ -15,7 +15,7 @@ def index(request):
     return render(request,'checkin/index.html',context)
 
 def login(request):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('-date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -25,9 +25,6 @@ def login(request):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                search_form = SearchForm()
-                add_form = AddForm()
-                visitors_list = Visitors.objects.all()
                 return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
             else:
                 pass
@@ -51,7 +48,7 @@ def search(request):
                 return render(request, 'checkin/visitors.html',{'visitor':visitor, 'editform': editing_form})
 
 def add_new_visitor(request):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('-date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -77,7 +74,7 @@ def add_new_visitor(request):
             return HttpResponse("error")
 
 def check_in_returning_visitor(request, visitor_id):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('-date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
