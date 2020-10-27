@@ -15,7 +15,7 @@ def index(request):
     return render(request,'checkin/index.html',context)
 
 def login(request):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -51,7 +51,7 @@ def search(request):
                 return render(request, 'checkin/visitors.html',{'visitor':visitor, 'editform': editing_form})
 
 def add_new_visitor(request):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -62,19 +62,22 @@ def add_new_visitor(request):
             temperature = form.cleaned_data.get('temperature')
             identification_number = form.cleaned_data.get('identification_number')
             telephone_number = form.cleaned_data.get('telephone_number')
-            visitor = Visitors(name=name, company=company, identification_number=identification_number,telephone_number=telephone_number)
-            visitor.save()
-            registered_visitor = Register(visitor=visitor, temperature=temperature)
-            registered_visitor.save()
-            return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
+            try:
+                visitor_check = Visitors.objects.get(name=name)
+                return HttpResponse("Visitor already exists")
+            except Visitors.DoesNotExist:
 
+                visitor = Visitors(name=name, company=company, identification_number=identification_number,telephone_number=telephone_number)
+                visitor.save()
+                registered_visitor = Register(visitor=visitor, temperature=temperature)
+                registered_visitor.save()
+                return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})      
         else:
-            print(form.errors)
             
             return HttpResponse("error")
 
 def check_in_returning_visitor(request, visitor_id):
-    visitors_list = Register.objects.all()
+    visitors_list = Register.objects.order_by('date')
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
