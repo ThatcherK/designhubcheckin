@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from .forms import LoginForm, SearchForm, AddForm, EditVisitorForm
 from .models import Visitors, Register
-
-
+from django.utils import timezone
+import datetime
 
 def index(request):
     form = LoginForm()
