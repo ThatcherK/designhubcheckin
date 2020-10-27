@@ -1,7 +1,9 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'checkin/style.css' %}">
 <form action="{% url 'search' %}" method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Search">
+    <input id="searchButton" type="submit" value="Search">
 </form>
 <form action="{% url 'addvisitor' %}" method="post">
     {% csrf_token %}

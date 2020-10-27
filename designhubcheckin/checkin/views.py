@@ -27,7 +27,7 @@ def login(request):
             if user is not None:
                 search_form = SearchForm()
                 add_form = AddForm()
-                visitors_list = Visitors.objects.all()
+                visitors_list = Register.objects.all()
                 return render(request,'checkin/mainpage.html',{'form': search_form, 'addform':add_form, 'visitors_list':visitors_list})
             else:
                 pass

@@ -1,0 +1,42 @@
+.loginform{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+.loginform input{
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+#loginButton{
+    background-color: yellow;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    font-size: 19px;
+    color: rgb(2, 70, 70);
+}
+#loginButton:hover{
+    background-color: rgb(141, 141, 5);
+}
+.loginInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginform h1{
+    color: teal;
+}
+.loginform label{
+    color: rgb(77, 2, 2);
+}
+#searchButton{
+    background-color: teal;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    color: white;
+    /* font-size: 19px; */
+}
