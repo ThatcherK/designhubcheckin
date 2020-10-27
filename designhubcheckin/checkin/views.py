@@ -15,7 +15,7 @@ def index(request):
     return render(request,'checkin/index.html',context)
 
 def login(request):
-    visitors_list = Register.objects.order_by('date')
+    visitors_list = Register.objects.all()
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -51,7 +51,7 @@ def search(request):
                 return render(request, 'checkin/visitors.html',{'visitor':visitor, 'editform': editing_form})
 
 def add_new_visitor(request):
-    visitors_list = Register.objects.order_by('date')
+    visitors_list = Register.objects.all()
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
@@ -77,7 +77,7 @@ def add_new_visitor(request):
             return HttpResponse("error")
 
 def check_in_returning_visitor(request, visitor_id):
-    visitors_list = Register.objects.order_by('date')
+    visitors_list = Register.objects.all()
     search_form = SearchForm()
     add_form = AddForm()
     if request.method == 'POST':
