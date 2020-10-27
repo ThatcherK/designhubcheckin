@@ -40,9 +40,9 @@
     padding: 20px;
 }
 .mainpageContainer h1{
-    color: rgb(49, 48, 48);
+    color: rgb(65, 64, 64);
 }
-#searchButton{
+#searchButton, #recordTempButton{
     background-color: teal;
     border-radius: 6px;
     border: none;
@@ -51,7 +51,7 @@
     width: 80px;
     /* font-size: 19px; */
 }
-#searchButton:hover{
+#searchButton:hover, #recordTempButton:hover{
     background-color: rgb(2, 56, 56);
 }
 .searchform input{
@@ -77,4 +77,34 @@
 }
 #addVisitorButton:hover{
     background-color: rgb(2, 56, 56);
+}
+#visitorsTable{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#visitorsTable td, #visitorsTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+#visitorsTable tr:nth-child(even){background-color: #f2f2f2;}
+#visitorsTable tr:hover {background-color: #ddd;}
+#visitorsTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: teal;
+    color: white;
+  }
+.recordTemperatureForm{
+    text-align: center;
+    padding: 20px;
+}
+.recordTemperatureForm input{
+    width: 400px;
+    height: 40px;
+
+}
+.recordTemperatureForm h2{
+    color: rgb(83, 82, 82);
 }
