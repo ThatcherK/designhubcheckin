@@ -9,17 +9,18 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 40px;
+    
 }
 #loginButton{
-    background-color: yellow;
+    background-color: rgba(141, 141, 5, 0.877);
     border-radius: 6px;
     border: none;
     padding: 10px;
     font-size: 19px;
-    color: rgb(2, 70, 70);
+    color: white;
 }
 #loginButton:hover{
-    background-color: rgb(141, 141, 5);
+    background-color: rgb(194, 194, 63);
 }
 .loginInputs{
     display: flex;
@@ -41,6 +42,9 @@
 }
 .mainpageContainer h1{
     color: rgb(65, 64, 64);
+}
+.mainpageContainer h2{
+    color: rgb(97, 96, 96);
 }
 #searchButton, #recordTempButton{
     background-color: teal;
