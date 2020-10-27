@@ -32,11 +32,30 @@
 .loginform label{
     color: rgb(77, 2, 2);
 }
+.mainpageContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 #searchButton{
     background-color: teal;
     border-radius: 6px;
     border: none;
     padding: 10px;
     color: white;
+    width: 80px;
     /* font-size: 19px; */
+}
+#searchButton:hover{
+    background-color: rgb(2, 56, 56);
+}
+.searchform input{
+    height: 40px;
+    width: 400px;
+}
+.addVisitorForm{
+    display: flex;
+    flex-direction: column;
 }
