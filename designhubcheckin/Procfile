@@ -1,0 +1,1 @@
+web: gunicorn designhubcheckin.wsgi --log-file -
