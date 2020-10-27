@@ -5,7 +5,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(max_length=32, widget=forms.PasswordInput,label="Password")
     
 class SearchForm(forms.Form):
-    visitor_name = forms.CharField(label="Search", max_length=100)
+    visitor_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter full name'}), label="Register repeat visitor", max_length=100 )
 
 class AddForm(forms.Form):
     name = forms.CharField(label='Full name', max_length=100)

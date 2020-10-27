@@ -6,10 +6,11 @@
         {{form}}
         <input id="searchButton" type="submit" value="Search">
     </form>
+    <h1>First time visitor</h1>
     <form action="{% url 'addvisitor' %}" method="post" class="addVisitorForm">
         {% csrf_token %}
         {{addform}}
-        <input type="submit" value="Add visitor">
+        <input type="submit" value="Register first time visitor" id="addVisitorButton">
     </form>
     {% if visitors_list %}
     <table style="border: 1px solid black;">
