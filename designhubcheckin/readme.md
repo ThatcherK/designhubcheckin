@@ -1,4 +1,4 @@
-An API for the proxpert legal web app
+A simple web application for checking in visitors
 
 
 ## Technologies
