@@ -26,7 +26,8 @@ SECRET_KEY = 'phlok_6grcr@1!j0v*5xy%f+6(p@fx!un)p!0&xc8!e#6751m='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'designhub-checkin.herokuapp.com'
+    'designhub-checkin.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
