@@ -12,12 +12,12 @@
     
 }
 #loginButton{
-    background-color: rgba(141, 141, 5, 0.877);
+    background-color: yellow;
     border-radius: 6px;
     border: none;
     padding: 10px;
     font-size: 19px;
-    color: white;
+    color: teal;
 }
 #loginButton:hover{
     background-color: rgb(194, 194, 63);
