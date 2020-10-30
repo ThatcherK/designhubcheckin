@@ -3,12 +3,14 @@
     flex-direction: column;
     padding: 20px;
     align-items: center;
+    border-radius: 4px;
 }
 .loginform input{
     width: 400px;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 40px;
+    border-radius: 6px;
     
 }
 #loginButton{
@@ -46,6 +48,9 @@
 .mainpageContainer h2{
     color: rgb(97, 96, 96);
 }
+.searchform label{
+    font-size: 24px;
+}
 #searchButton, #recordTempButton{
     background-color: teal;
     border-radius: 6px;
@@ -61,6 +66,7 @@
 .searchform input{
     height: 40px;
     width: 400px;
+    font-size: 18px;
 }
 
 .addVisitorForm{
@@ -68,7 +74,7 @@
     flex-direction: column;
 }
 #addVisitorBtn{
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
     background-color: teal;
     border: none;
@@ -84,6 +90,10 @@
     height: 40px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 18px;
+}
+.addVisitorForm label{
+    font-size: 18px;
 }
 #addVisitorButton{
     background-color: teal;
