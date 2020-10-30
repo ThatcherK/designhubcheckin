@@ -76,6 +76,9 @@
     color: white;
     font-size: medium;
 }
+#addVistorBtn:hover{
+    background-color: rgb(2, 56, 56);
+}
 .addVisitorForm input{
     width: 400px;
     height: 40px;
